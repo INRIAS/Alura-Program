@@ -1,33 +1,31 @@
-let numeroSecreto = 6;
+let numeroSecreto = Math.floor(Math.random()*10)+1;
 let numeroUsuario;
 let intentos = 1;
 let quedan = 4;
-let palabraVeces = "intento";
-let palabraIntentos = "intentos",
-  queda = "quedan",
-  restante = "restantes.";
+
+console.log(numeroSecreto);
+console.log(typeof numeroSecreto);
+
 
 while (quedan != -1 && numeroSecreto != numeroUsuario) {
-  if (quedan == 1) {
-    palabraIntentos = "intento";
-    queda = "queda";
-    restante = "restante.";
-  }
 
-  numeroUsuario = prompt("Indica un número entre 1 y 10 por favor:");
+  numeroUsuario = parseInt(prompt("Indica un número entre 1 y 10 por favor:"));
+  console.log(typeof numeroUsuario);
+  if (typeof numeroUsuario == Number) {
+  
   if (numeroUsuario == numeroSecreto) {
     alert(
-      `Acertaste el número secreto, lo lograste en ${intentos} ${palabraVeces}`
+      `Acertaste el número secreto, lo lograste en ${intentos} ${intentos==1 ? "intento." : "intentos."}`
     );
   } else if (numeroUsuario > numeroSecreto) {
     alert(
-      `El número secreto es menor, Te ${queda} ${quedan} ${palabraIntentos} ${restante}`
+      `El número secreto es menor, Te ${quedan==1 ? "queda" : "quedan"} ${quedan} ${quedan==1 ? "intento restante." : "intentos restantes."}`
     );
     intentos++;
     quedan--;
   } else {
     alert(
-      `El número secreto es mayor, Te ${queda} ${quedan} ${palabraIntentos} ${restante}`
+      `El número secreto es mayor, Te ${quedan==1 ? "queda" : "quedan"} ${quedan} ${quedan==1 ? "intento restante." : "intentos restantes."}`
     );
     intentos++;
     quedan--;
@@ -36,6 +34,10 @@ while (quedan != -1 && numeroSecreto != numeroUsuario) {
 
   if (quedan == -1) {
     alert("Excediste el numero de intentos posibles, Sistema Blqueaado.!");
+  }
+
+  } else{
+    alert("EL sistema solo admite números")
   }
 }
 

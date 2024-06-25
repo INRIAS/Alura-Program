@@ -29,7 +29,7 @@ puntuacion != 99 && puntuacion >= 100
   : alert(`Lo sentimos has perdido, te falto 1 punto para ganar`); */
 
 //----Bucle----
-iterador = 1;
+/* iterador = 1;
 let numeroContar = prompt("Ingresa el número veces que se contara: ");
 numeroContar ++;
 
@@ -37,3 +37,4 @@ while (iterador != numeroContar) {
   console.log(`${iterador}`);
     iterador++;
   }
+ */
