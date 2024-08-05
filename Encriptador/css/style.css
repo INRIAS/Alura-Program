@@ -1,0 +1,30 @@
+:root{
+    --color-principal:#122F4B;
+}
+
+
+.p{
+    color: var(--color-principal);
+}
+
+.alert{
+color: red;
+}
+
+/* Encriptado */
+
+.img-encriptado{
+    color: var(--color-principal);
+}
+
+.is-active-img{
+    display: none;
+}
+
+.btn-copy{
+    visibility: hidden;
+}
+
+.is-active-btn{
+    visibility: visible;
+}
