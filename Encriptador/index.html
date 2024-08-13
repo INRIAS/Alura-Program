@@ -12,7 +12,7 @@
     <main>
         <h1>Encriptador Web</h1>
         <section class="container_principal">
-            <section class="container_encriptar">
+            <section class="container_encriptar ">
                 <textarea id="ingresar" placeholder="Ingrese el texto aqui:"></textarea>
                 <section class="container-alerts">
                     <p class="text-required alert"><img class="" src="./assets/circle-fill.svg" alt="required"> Se requiere ingresar un valor...!!! </p>
@@ -23,9 +23,10 @@
                 </section>
             </section>
             <section class="container-group">
-                <p class="text-desencriptado" id="encriptado"></p>
-                <p class="img-encriptado"><img src="./assets/Droopy.svg" alt="">Ingresa el texto que desees encriptar o desencriptar.</p>
-                <button onclick="copiarTexto()" type="button" class="btn-copy" id="copybutton">Copiar</button>
+                <p class="text-desencriptado is-active" id="encriptado"></p>
+                <img class="img-encriptado" src="./assets/Droopy.svg" alt="Droopy">
+                <p class="img-encriptado">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button onclick="copiarTexto()" type="button" class="btn-copy is-active" id="copybutton">Copiar</button>
             </section>
         </section>
         <section class="button-order">

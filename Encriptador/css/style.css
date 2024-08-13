@@ -1,7 +1,7 @@
 :root {
     --color-principal: #122F4B;
     --color-footer: #fff;
-    
+
 }
 
 /*----------Font--------*/
@@ -23,8 +23,6 @@
 
 html {
     font-size: 16px;
-    width: auto;
-    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -54,14 +52,12 @@ h1 {
 body {
     width: auto;
     background-image: url(../assets/Back2.jpg);
-    background-size: 100vw 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 /*---------main--------*/
-main {
-    width: inherit;
-}
+
 
 .container_principal {
     width: 80%;
@@ -84,7 +80,6 @@ main {
     font-family: "kadwa";
     font-size: 1.5rem;
     width: 100%;
-    height: 60vh;
     padding: 20px;
     border: none;
     resize: none;
@@ -95,7 +90,7 @@ main {
 .container-alerts {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     border: none;
     padding: 0 20px;
@@ -110,7 +105,7 @@ main {
     display: none;
 }
 
-.btn-eraser{
+.btn-eraser {
     background-color: var(--color-footer);
     border: none;
 }
@@ -121,20 +116,20 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .img-encriptado {
     color: var(--color-principal);
-    width: 30%;
+    /* width: 45%; */
+    padding: 5%;
     text-align: center;
     font-weight: bold;
 }
 
-.text-desencriptado{
+.text-desencriptado {
     width: 100%;
-    max-height: 60vh;
     padding: 20px;
     font-family: "kadwa";
     font-size: 1.5rem;
@@ -142,7 +137,7 @@ main {
     overflow: auto;
 }
 
-.is-active-img {
+.is-active {
     display: none;
 }
 
@@ -157,27 +152,25 @@ main {
     border-radius: 5px;
 }
 
-.is-active-btn {
-    visibility: visible;
-}
-
 
 
 /* ------Button------- */
 
 .button-order {
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
+    align-items: center;
     padding: 10px;
 }
 
 .btn {
-    width: 15%;
+    width: 20%;
     color: var(--color-principal);
     font-family: "kadwa";
     font-weight: normal;
     font-size: 1.4rem;
-    margin: 1% 2%;
+    margin: 1.4% 2%;
     padding: 5px;
     border-radius: 5px;
 }
@@ -191,11 +184,12 @@ main {
 footer {
     background-color: var(--color-footer);
     position: absolute;
+    margin: 0;
     width: 100%;
-    bottom:0 ;
+    bottom: auto;
 }
 
-footer p{
+footer p {
     color: var(--color-principal);
     padding: 5px 0;
     text-align: center;
@@ -204,31 +198,139 @@ footer p{
 
 /* -------Responsive-------- */
 
-@media (min-width: 345px) {
-
-}
-
-@media (max-width: 768px) {
-    body{
-        background-size: auto;
+@media (max-width: 390px) {
+    html {
+        width: 378px;
     }
 
-    .container_principal{
-        width: 90%;
-        height: auto;
-        display: flex;
+    .container_principal {
+        grid-template-columns: 100%;
+    }
+
+    .container_encriptar,
+    .container_encriptar textarea {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .container_encriptar {
+        box-shadow: 0px 2px 10px var(--color-principal);
+    }
+
+    .container_encriptar textarea,
+    .text-desencriptado {
+        height: 40vh
+    }
+
+    .button-order {
         flex-direction: column;
     }
 
-    .container_encriptar{
+    .img-encriptado {
+        color: var(--color-principal);
+        width: 33%;
+        padding: 2%;
+    }
+
+    .btn {
+        width: 80%;
+    }
+
+}
+
+@media (min-width: 380px) {
+
+    .container_principal {
+        grid-template-columns: 100%;
+    }
+
+    .container_encriptar,
+    .container_encriptar textarea {
         border-radius: 10px 10px 0 0;
     }
 
-    .container_encriptar textarea{
+    .container_encriptar textarea {
+        height: 40vh
+    }
+
+    .container_encriptar {
+        box-shadow: 0px 2px 10px var(--color-principal);
+    }
+
+    .container_encriptar textarea,
+    .text-desencriptado {
+        height: 40vh
+    }
+
+    .button-order {
+        flex-direction: column;
+    }
+
+    .img-encriptado {
+        color: var(--color-principal);
+        width: 33%;
+        padding: 2%;
+    }
+
+    .btn {
+        width: 80%;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .container_principal {
+        grid-template-columns: 100%;
+    }
+
+    .container_encriptar,
+    .container_encriptar textarea {
         border-radius: 10px 10px 0 0;
     }
 
-    footer p{
-        bottom: 0%;
+    .container_encriptar {
+        box-shadow: 0px 2px 10px var(--color-principal);
     }
+
+    .container_encriptar textarea,
+    .text-desencriptado {
+        height: 40vh
+    }
+
+    .button-order {
+        flex-direction: row;
+    }
+
+    .btn {
+        width: 20%;
+    }
+
+    .img-encriptado {
+        color: var(--color-principal);
+        width: 35%;
+        padding: 3%;
+    }
+}
+
+
+@media (min-width: 1020px) {
+    .container_principal {
+        grid-template-columns: 50% 50%;
+    }
+
+    .container_encriptar {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .container_encriptar textarea {
+        height: 60vh;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .img-encriptado {
+        color: var(--color-principal);
+        width: auto;
+        padding: 3%;
+    }
+
+
 }

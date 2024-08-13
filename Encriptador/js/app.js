@@ -31,9 +31,9 @@ function encriptar() {
   }
 
   if (encriptar_texto !== "") {
-    // btn_desencriptar.removeAttribute("disabled");
-    btn_copy_visibility.classList.add("is-active-btn");
-    img_encriptado.classList.add("is-active-img");
+    encriptado_texto.classList.remove("is-active")
+    btn_copy_visibility.classList.remove("is-active");
+    img_encriptado.classList.add("is-active");
     $text_desencriptado.classList.remove("alert");
   }
 
