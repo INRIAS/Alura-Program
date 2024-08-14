@@ -21,6 +21,7 @@
 
 }
 
+/* --------Normalice------ */
 html {
     font-size: 16px;
     margin: 0;
@@ -35,8 +36,6 @@ html {
     margin: 0;
 }
 
-
-
 /* -----------Title---------- */
 
 h1 {
@@ -50,14 +49,15 @@ h1 {
 /* -------body------ */
 
 body {
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
     background-image: url(../assets/Back2.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: round;
 }
 
 /*---------main--------*/
-
 
 .container_principal {
     width: 80%;
@@ -110,20 +110,21 @@ body {
     border: none;
 }
 
-/* Encriptado */
+/* ---------Encriptado---------- */
 
 .container-group {
     width: 100%;
+    padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
 .img-encriptado {
     color: var(--color-principal);
-    /* width: 45%; */
-    padding: 5%;
+    width: 20%;
+    /* padding: 1%; */
     text-align: center;
     font-weight: bold;
 }
@@ -137,12 +138,22 @@ body {
     overflow: auto;
 }
 
+/* 
+.content-start{
+    width: 40%;
+    padding: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+} */
+
 .is-active {
     display: none;
 }
 
 .btn-copy {
-    visibility: hidden;
     color: var(--color-footer);
     background-color: var(--color-principal);
     font-family: "kadwa";
@@ -183,8 +194,8 @@ body {
 /* -----Footer----- */
 footer {
     background-color: var(--color-footer);
-    position: absolute;
-    margin: 0;
+    position: relative;
+    margin-top:auto;
     width: 100%;
     bottom: auto;
 }
@@ -328,7 +339,7 @@ footer p {
 
     .img-encriptado {
         color: var(--color-principal);
-        width: auto;
+        width: 30%;
         padding: 3%;
     }
 

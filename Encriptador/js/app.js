@@ -2,12 +2,12 @@ const encriptado_texto = document.querySelector("#encriptado");
 const copyButton = document.querySelector("#copyButton");
 const $text_required = document.querySelector(".text-required");
 const $text_alert = document.querySelector(".text-alert");
-const $text_desencriptado = document.querySelector(".text-desencriptado");
 const btn_encriptar = document.querySelector(".btn-encriptar");
 const btn_desencriptar = document.querySelector(".btn-desencriptar");
 const btn_copy_visibility = document.querySelector(".btn-copy");
 const $btn_eraser = document.querySelector(".btn-eraser");
 const img_encriptado = document.querySelector(".img-encriptado");
+const $solicitud_encriptado = document.querySelector(".solicitud-encriptado");
 let memory_text = [];
 let memory_upload = [];
 let asignar = "";
@@ -34,7 +34,7 @@ function encriptar() {
     encriptado_texto.classList.remove("is-active")
     btn_copy_visibility.classList.remove("is-active");
     img_encriptado.classList.add("is-active");
-    $text_desencriptado.classList.remove("alert");
+    $solicitud_encriptado.classList.add("is-active");
   }
 
   for (let i = 0; i < encriptar_texto.length; i++) {
