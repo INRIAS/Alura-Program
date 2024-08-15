@@ -139,18 +139,23 @@ body {
 
 .solicitud-encriptado{
     width: 50%;
+    color: var(--color-principal);
     font-weight: bold;
     text-align: center;
 }
 
 .text-desencriptado {
     width: 100%;
-    min-height: 55vh;
+    min-height: 54vh;
     padding: 20px;
     font-family: "kadwa";
     font-size: 1.5rem;
     word-wrap: break-word;
     overflow: auto;
+}
+
+.text-alert{
+    color: var(--color-principal);
 }
 
 .is-active {
@@ -187,6 +192,7 @@ body {
     margin: 1.4% 2%;
     padding: 5px;
     border-radius: 5px;
+    border: 1px solid var(--color-principal);
     transition: box-shadow 0.5s ease-in ;
 }
 
@@ -357,14 +363,13 @@ footer p {
     }
 
     .container_encriptar textarea {
-        height: 60vh;
+        height: 53vh;
         border-radius: 10px 10px 0 0;
     }
 
     .img-encriptado {
         color: var(--color-principal);
         width: 40%;
-        padding: 3%;
     }
 
 
