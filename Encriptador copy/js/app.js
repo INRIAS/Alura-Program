@@ -13,8 +13,7 @@ let textoDesencriptar = "";
 /* ------------Encriptar--------- */
 
 function encriptar(texto) {
-
-  if (tAreaEncriptar.value=="") {
+  if (tAreaEncriptar.value == "") {
     $textAlert.classList.add("alert");
     $textRequired.classList.remove("alert");
     setTimeout(() => {
@@ -23,7 +22,12 @@ function encriptar(texto) {
     }, 3000);
   }
 
-  if (tAreaEncriptar.value!=="") {
+  if (tAreaEncriptar.value == "") {
+    $textAlert.classList.add("alert");
+    $textRequired.classList.remove("alert");
+  }
+
+  if (tAreaEncriptar.value !== "") {
     $imgEncriptado.classList.add("is-active");
     $solicitudEncriptado.classList.add("is-active");
     tAreaResultado.classList.remove("is-active");
@@ -50,18 +54,17 @@ function encriptar(texto) {
 
 // Función que se activa al presionar el botón "Encriptar"
 function aEncriptado() {
-  textoEncriptar = tAreaEncriptar.value;
+  textoEncriptar = tAreaEncriptar.value.toLowerCase();
   textoEncriptado = encriptar(textoEncriptar);
   tAreaResultado.innerHTML = textoEncriptado;
-  limpiar();
-
+  // limpiar();
 }
 
-// 
+//
 
 /* ------------Desenncriptar--------- */
 function desencriptar(texto) {
-  if (tAreaEncriptar.value=="") {
+  if (tAreaEncriptar.value == "") {
     $textAlert.classList.add("alert");
     $textRequired.classList.remove("alert");
     setTimeout(() => {
@@ -70,7 +73,7 @@ function desencriptar(texto) {
     }, 3000);
   }
 
-  if (tAreaEncriptar.value!=="") {
+  if (tAreaEncriptar.value !== "") {
     $imgEncriptado.classList.add("is-active");
     $solicitudEncriptado.classList.add("is-active");
     tAreaResultado.classList.remove("is-active");
@@ -117,7 +120,15 @@ function copiarTexto() {
 
 /*--------- Pre-limpiar ------------- */
 
-function limpiar() {
-  tAreaEncriptar.value = "";
-}
+// function limpiar() {
+//   tAreaEncriptar.value = "";
+// }
 
+function btnEraser() {
+  tAreaEncriptar.value="";
+  tAreaResultado.value="";
+  $imgEncriptado.classList.remove("is-active");
+  $solicitudEncriptado.classList.remove("is-active");
+  tAreaResultado.classList.add("is-active");
+  $btnCopy.classList.add("is-active");
+}

@@ -1,6 +1,7 @@
 :root {
     --color-principal: #122F4B;
     --color-footer: #fff;
+    --color-sombras: grey;
 
 }
 
@@ -39,11 +40,16 @@ html {
 /* -----------Title---------- */
 
 h1 {
+    
     font-family: "atlantis";
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 1.5rem + 3vw, 3rem);;
     text-align: center;
     color: var(--color-principal);
     margin: 20px 0;
+}
+
+h1::after{
+    content: "Encriptador Web";
 }
 
 /* -------body------ */
@@ -65,6 +71,7 @@ body {
     grid-template-columns: 50% 50%;
     background-color: #fff;
     margin: auto;
+    margin-bottom: 5px;
     border: 0.5px solid var(--color-principal);
     border-radius: 10px;
 }
@@ -76,11 +83,12 @@ body {
     box-shadow: 2px 1px 10px var(--color-principal);
 }
 
+
 .container_encriptar textarea {
     font-family: "kadwa";
     font-size: 1.5rem;
     width: 100%;
-    padding: 20px;
+    padding: 30px;
     border: none;
     resize: none;
     border-radius: 10px 0 0 10px;
@@ -90,10 +98,9 @@ body {
 .container-alerts {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
     border: none;
-    padding: 0 20px;
 }
 
 
@@ -107,7 +114,10 @@ body {
 
 .btn-eraser {
     background-color: var(--color-footer);
+    width: auto;
     border: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* ---------Encriptado---------- */
@@ -117,37 +127,31 @@ body {
     padding: 2%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .img-encriptado {
     color: var(--color-principal);
-    width: 20%;
-    /* padding: 1%; */
     text-align: center;
     font-weight: bold;
 }
 
+.solicitud-encriptado{
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+}
+
 .text-desencriptado {
     width: 100%;
+    min-height: 55vh;
     padding: 20px;
     font-family: "kadwa";
     font-size: 1.5rem;
     word-wrap: break-word;
     overflow: auto;
 }
-
-/* 
-.content-start{
-    width: 40%;
-    padding: 2%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-} */
 
 .is-active {
     display: none;
@@ -172,7 +176,6 @@ body {
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    padding: 10px;
 }
 
 .btn {
@@ -184,6 +187,11 @@ body {
     margin: 1.4% 2%;
     padding: 5px;
     border-radius: 5px;
+    transition: box-shadow 0.5s ease-in ;
+}
+
+.btn:hover{
+    box-shadow: 3px 3px 4px var(--color-sombras);
 }
 
 .btn-encriptar {
@@ -209,10 +217,15 @@ footer p {
 
 /* -------Responsive-------- */
 
-@media (max-width: 390px) {
+@media (max-width: 396px) {
     html {
         width: 378px;
     }
+
+    h1::after{
+        content: "Encriptador Mobile";
+    }
+    
 
     .container_principal {
         grid-template-columns: 100%;
@@ -244,11 +257,16 @@ footer p {
 
     .btn {
         width: 80%;
+        margin: 1.4% 2%;
     }
 
 }
 
-@media (min-width: 380px) {
+@media (min-width: 396px) {
+
+    h1::after{
+        content: "Encriptador Tablet";
+    }
 
     .container_principal {
         grid-template-columns: 100%;
@@ -280,6 +298,7 @@ footer p {
         color: var(--color-principal);
         width: 33%;
         padding: 2%;
+        text-align: center;
     }
 
     .btn {
@@ -289,6 +308,11 @@ footer p {
 }
 
 @media (min-width: 768px) {
+
+    h1::after{
+        content: "Encriptador Web";
+    }
+
     .container_principal {
         grid-template-columns: 100%;
     }
@@ -339,7 +363,7 @@ footer p {
 
     .img-encriptado {
         color: var(--color-principal);
-        width: 30%;
+        width: 40%;
         padding: 3%;
     }
 
